@@ -46,7 +46,7 @@ class Schedule(models.Model):
         (6, _("Saturday")),
         (7, _("Sunday")),
     ]
-    venue = models.ForeignKey(Venue)
+    venue = models.ForeignKey(Venue, related_name='schedules')
     from_weekday = models.IntegerField(choices=WEEKDAYS)
     to_weekday = models.IntegerField(choices=WEEKDAYS, null=True, blank=True)
     from_hour = models.TimeField()
